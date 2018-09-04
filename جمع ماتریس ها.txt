@@ -1,0 +1,34 @@
+  Console.WriteLine("pleasse enter the width and the height of your mattress");
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            int[,] c = new int[a, b];
+            int[,] d = new int[a, b];
+            int[,] e = new int[a, b];
+            for (int i = 0; i < a; i++)
+            {
+                for (int j = 0; j < b; j++)
+                {
+                    Console.Write($"[{i},{j}]:");
+
+                    c[i, j] = int.Parse(Console.ReadLine());
+                }
+            }
+
+            for (int i = 0; i < a; i++)
+            {
+                for (int j = 0; j < b; j++)
+                {
+                    Console.Write($"[{i},{j}]:");
+                    d[i, j] = int.Parse(Console.ReadLine());
+                }
+            }
+            for (int i = 0; i < a; i++)
+            {
+                for (int j = 0; j < b; j++)
+                {
+                    e[i, j] = c[i, j] + d[i, j];
+                    Console.Write($"[{i},{j}]:" + e[i, j]);
+                   
+                }
+            }
+            Console.ReadKey();

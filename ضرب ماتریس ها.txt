@@ -1,0 +1,45 @@
+ Console.WriteLine("please enter the height and the width of 2 arrays");
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            int c = int.Parse(Console.ReadLine());
+            int d = int.Parse(Console.ReadLine());
+            int[,] e = new int[a, b];
+            int[,] f = new int[c, d];
+            int[,] h = new int[a, d];
+            if (b != c)
+            {
+                Console.WriteLine("cannot multiply these mattress");
+            }
+            else
+            {
+                for (int i = 0; i < a; i++)
+                {
+                    for (int j = 0; j < b; j++)
+                    {
+                        e[i, j] = int.Parse(Console.ReadLine());
+                    }
+                }
+                for (int i = 0; i < c; i++)
+                {
+                    for (int j = 0; j < d; j++)
+                    {
+                        f[i, j] = int.Parse(Console.ReadLine());
+                    }
+
+                }
+                for (int i = 0; i < a; i++)
+                {
+
+
+                    for (int j = 0; j < d; j++)
+                    {
+                        for (int q = 0; q < b; q++)
+                        {
+                            h[i, j] += e[i, q] * f[q, j];
+
+                        }
+                        Console.Write(h[i, j]);
+                    }
+                }
+            }
+            Console.ReadKey();

@@ -1,0 +1,35 @@
+ Console.WriteLine("please enter n:");
+            int n = int.Parse(Console.ReadLine());
+            int[,] a = new int[n, n];
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("");
+                for (int j = 0; j <n; j++)
+                {
+                    
+                    a[i, j] = int.Parse(Console.ReadLine());
+                }
+            }
+            for (int i = 0; i <n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (a[i,j]>a[j,i])
+                    {
+                        int b = a[i, j];
+                        a[i, j] = a[j, i];
+                        a[j, i] = b;
+
+                    }
+                }
+            }
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("");
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write(a[i,j]);
+                }
+            }
+            Console.ReadKey();
+        }

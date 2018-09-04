@@ -1,0 +1,57 @@
+ Console.WriteLine("please enter 2 numbers:");
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            int[,] c = new int[a, b];
+            for (int i = 0; i <a; i++)
+            {
+                for (int j = 0; j <b; j++)
+                {
+                    c[i, j] = int.Parse(Console.ReadLine());
+                }
+            }
+            for (int e = 0; e < a * b; e++)
+            {
+                for (int i = 0; i < a; i++)
+                {
+                    for (int j = 0; j < b; j++)
+                    {
+                        if (j+1<b &&c[i, j] > c[i, j + 1])
+                        {
+                            int w = c[i, j];
+
+                            c[i, j] = c[i, j + 1];
+                            c[i, j + 1] = w;
+                        }
+
+                    }
+                }
+                for (int i = 0; i < a; i++)
+                {
+                    for (int j = 0; j < b; j++)
+                    {
+                        if (i + 1 < a && c[i, j] > c[i+1, j ])
+                        {
+                            int w = c[i, j];
+
+                            c[i, j] = c[i+1, j];
+                            c[i+1, j] = w;
+                        }
+
+                    }
+                }
+            }
+            int[] d = new int[a * b];
+            int o = 0;
+            for (int i = 0; i < a; i++)
+            {
+                for (int j = 0; j < b; j++)
+                {
+                    d[o] = c[i,j];
+                    o++;
+                }
+            }
+            for (int i = 0; i < a*b; i++)
+            {
+                Console.Write(d[i]);
+            }
+            Console.ReadKey();
